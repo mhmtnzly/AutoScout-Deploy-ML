@@ -17,7 +17,6 @@ from sklearn.preprocessing import StandardScaler
 from datetime import date
 current_year = date.today().year
 
-import lightgbm
 
 # default_values = pd.read_csv('default.csv')
 # default_values = default_values.loc[:,~default_values.columns.duplicated()]
