@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on Wed Apr 20 19:37:58 2022
+Created on Wed May 07 12:00:00 2022
 
 @author: PyBoys
 """
@@ -13,15 +13,8 @@ Created on Wed Apr 20 19:37:58 2022
 import streamlit as st
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import StandardScaler
 from datetime import date
 current_year = date.today().year
-
-
-# default_values = pd.read_csv('default.csv')
-# default_values = default_values.loc[:,~default_values.columns.duplicated()]
-# print(len(default_values.columns))
-
 
 #load the model from disk
 import joblib
@@ -29,11 +22,6 @@ filename = 'finalized_model.sav'
 model = joblib.load(filename)
 
 sc = joblib.load(open('scaler.sav', 'rb'))
-# y_pred = gbm.predict(X_test_scaled)
-# test_back = np.exp(y_test)
-# pred_back = np.exp(y_pred)
-# print(r2_score(test_back,pred_back))
-# print(mean_squared_error(test_back, pred_back, squared=False))
 
 #Import python scripts
 from preprocessing import preprocess,make_model_dict, n_dict
