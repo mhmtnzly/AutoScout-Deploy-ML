@@ -66,7 +66,6 @@ def main():
         total_co2_emissions = mileage * co2_emissions
 
         data = {
-                'make_model_label': make_model_dict[make_model_label],
                 'mileage': mileage, 
                 'seats': n_dict[seats],
                 'doors': n_dict[doors],
@@ -78,7 +77,8 @@ def main():
                 'Empty_weight':empty_weight,
                 'fuel_consumption': fuel_consumption,
                 'co2_emissions' : co2_emissions,
-                'first_registration_years': age,# 1
+                'first_registration_years': age,
+                'make_model_label': make_model_dict[make_model_label],# 1
                 'mileage_years': mileage/age,
                 'total_consumption': total_consumption, #
                 'total_co2_emissions': total_co2_emissions
