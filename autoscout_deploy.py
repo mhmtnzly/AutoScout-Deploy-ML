@@ -46,14 +46,14 @@ def main():
     if add_selectbox == "Online":
         st.info("Input data below")
         #Based on our optimal features selection
-        st.subheader("Top 10 Most Important Features:")
+        st.subheader("The Most Important Features:")
         make_model_label = st.selectbox('Make and Model of the Car' , (make_model_dict))
-        first_registration = st.number_input('First Registration Year of the Car', min_value=1940, max_value=2023, value=2000)
-        empty_weight = st.number_input('Empty Weight of the Car', min_value=600, max_value=10000000) #### ok
-        mileage = st.number_input('Mileage of the Car',value = 0.0)
+        first_registration = st.number_input('First Registration Year of the Car', min_value=1940, max_value=2021, value=2000)
+        empty_weight = st.number_input('Empty Weight of the Car', min_value=0, value =0) #### ok
+        mileage = st.number_input('Mileage of the Car',value = 0)
         Power = st.number_input('Power of the Car',value = 0)
         fuel_consumption = st.number_input('Fuel Consumption of the Car',value = 0.0)
-        co2_emissions = st.number_input('Co2 emission per km', value = 0.0)
+        co2_emissions = st.number_input('Co2 emission per km', value = 0)
         engine_size = st.number_input('Engine Size of the Car',value=0) 
         gears = st.selectbox('Gear of the Car', ('1','2','3', '4','5','6','7', '8','9'))
         seats = st.selectbox('Seat of the Car', ('1','2','3', '4','5','6','7', '8','9')) 
@@ -66,6 +66,7 @@ def main():
         total_co2_emissions = mileage * co2_emissions
 
         data = {
+                'make_model_label': make_model_dict[make_model_label],
                 'mileage': mileage, 
                 'seats': n_dict[seats],
                 'doors': n_dict[doors],
@@ -77,8 +78,7 @@ def main():
                 'Empty_weight':empty_weight,
                 'fuel_consumption': fuel_consumption,
                 'co2_emissions' : co2_emissions,
-                'first_registration_years': age,
-                'make_model_label': make_model_dict[make_model_label],# 1
+                'first_registration_years': age,# 1
                 'mileage_years': mileage/age,
                 'total_consumption': total_consumption, #
                 'total_co2_emissions': total_co2_emissions
