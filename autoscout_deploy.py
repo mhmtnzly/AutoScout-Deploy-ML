@@ -3,7 +3,6 @@
 
 """
 Created on Wed May 07 12:00:00 2022
-
 @author: PyBoys
 """
 
@@ -99,7 +98,7 @@ def main():
 
 
         #Preprocess inputs
-        preprocess_df = preprocess(features_df, 'Online')
+        #preprocess_df = preprocess(features_df, 'Online')
 
 
         features_df_scaled = sc.transform(features_df)
